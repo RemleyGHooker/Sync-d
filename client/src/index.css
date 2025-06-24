@@ -1,0 +1,374 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(0, 0%, 8%);
+  --muted: hsl(0, 0%, 96%);
+  --muted-foreground: hsl(0, 0%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 8%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 8%);
+  --border: hsl(0, 0%, 90%);
+  --input: hsl(0, 0%, 96%);
+  --primary: hsl(240, 100%, 60%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 96%);
+  --secondary-foreground: hsl(0, 0%, 8%);
+  --accent: hsl(240, 100%, 96%);
+  --accent-foreground: hsl(240, 100%, 10%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 100%, 60%);
+  --radius: 12px;
+  
+  /* Posh-inspired colors */
+  --posh-purple: hsl(240, 100%, 60%);
+  --posh-light-purple: hsl(240, 100%, 96%);
+  --posh-gray-50: hsl(0, 0%, 98%);
+  --posh-gray-100: hsl(0, 0%, 96%);
+  --posh-gray-200: hsl(0, 0%, 90%);
+  --posh-gray-300: hsl(0, 0%, 83%);
+  --posh-gray-400: hsl(0, 0%, 64%);
+  --posh-gray-500: hsl(0, 0%, 45%);
+  --posh-gray-600: hsl(0, 0%, 32%);
+  --posh-gray-700: hsl(0, 0%, 25%);
+  --posh-gray-800: hsl(0, 0%, 15%);
+  --posh-gray-900: hsl(0, 0%, 8%);
+}
+
+.dark {
+  --background: hsl(222, 84%, 5%);
+  --foreground: hsl(210, 40%, 98%);
+  --muted: hsl(217, 33%, 17%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --popover: hsl(222, 84%, 5%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --card: hsl(222, 84%, 5%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --border: hsl(217, 33%, 17%);
+  --input: hsl(217, 33%, 17%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Posh-inspired typography */
+.posh-font {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.posh-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.posh-subtitle {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: hsl(215, 16%, 47%);
+}
+
+/* Posh-style shadows and effects */
+.posh-shadow {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.posh-shadow-lg {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.posh-border {
+  border: 1px solid hsl(214, 32%, 91%);
+}
+
+.posh-glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Brown Paper & Wood Textures */
+.brown-paper {
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23654321' opacity='0.08'%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3Ccircle cx='50' cy='25' r='0.5'/%3E%3Ccircle cx='30' cy='45' r='1.5'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23654321' stroke-width='0.3' opacity='0.15'%3E%3Cpath d='M0 20h40M20 0v40'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 60px 60px, 40px 40px;
+}
+
+.wood-grain {
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(101, 67, 33, 0.1) 0px,
+      rgba(101, 67, 33, 0.2) 1px,
+      rgba(139, 69, 19, 0.1) 2px,
+      transparent 3px,
+      transparent 6px
+    ),
+    url("data:image/svg+xml,%3Csvg width='200' height='20' viewBox='0 0 200 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10Q50 5 100 10T200 10' fill='none' stroke='%23654321' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+  background-size: 100% 6px, 200px 20px;
+}
+
+/* Pacific Northwest Patches & Elements */
+.pnw-patch {
+  background: var(--pnw-paper);
+  border: 2px solid var(--pnw-bark);
+  border-radius: 12px;
+  padding: 8px 16px;
+  position: relative;
+  box-shadow: 3px 3px 8px rgba(101, 67, 33, 0.2);
+  transform: rotate(-1deg);
+  font-family: 'Impact', 'Arial Black', sans-serif;
+}
+
+.pnw-patch::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 8px;
+  background: 
+    linear-gradient(45deg, #8B7355 0%, #A0916B 50%, #8B7355 100%);
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.pnw-card {
+  background: 
+    var(--pnw-paper),
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23654321' opacity='0.05'%3E%3Ccircle cx='40' cy='40' r='2'/%3E%3Ccircle cx='20' cy='20' r='1'/%3E%3Ccircle cx='60' cy='60' r='1.5'/%3E%3C/g%3E%3C/svg%3E");
+  border-radius: 15px;
+  box-shadow: 
+    0 6px 16px rgba(101, 67, 33, 0.15),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  border: 2px solid rgba(101, 67, 33, 0.2);
+  position: relative;
+}
+
+.pnw-card::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 20px;
+  height: 20px;
+  background: 
+    radial-gradient(circle at center, transparent 4px, var(--pnw-moss) 5px, var(--pnw-moss) 8px, transparent 9px),
+    var(--pnw-moss);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* Wood Button Style */
+.wood-button {
+  background: 
+    linear-gradient(135deg, var(--pnw-oak), var(--pnw-cedar)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(101, 67, 33, 0.1) 0px,
+      rgba(101, 67, 33, 0.2) 1px,
+      transparent 2px
+    );
+  border: 2px solid var(--pnw-bark);
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  box-shadow: 
+    0 4px 8px rgba(101, 67, 33, 0.3),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+/* Pinboard Effect */
+.pinboard {
+  background: 
+    var(--pnw-brown),
+    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23654321'%3E%3Ccircle cx='20' cy='20' r='1' opacity='0.3'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: auto, 40px 40px;
+  position: relative;
+}
+
+.pinboard::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #C0392B 40%, #922B21 100%);
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+.pinboard::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #C0392B 40%, #922B21 100%);
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+/* Blocky adventure font */
+.adventure-font {
+  font-family: 'Impact', 'Arial Black', 'Helvetica', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.adventure-title {
+  font-family: 'Impact', 'Arial Black', 'Helvetica', sans-serif;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Soft shadows for depth */
+.soft-shadow {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.gentle-glow {
+  box-shadow: 0 0 12px rgba(255,255,255,0.4);
+}
+
+/* Mobile app container */
+.mobile-app {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: white;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Kanban column styling */
+.kanban-column {
+  min-height: 200px;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+/* Event card animations */
+.event-card {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat overlay animations */
+.chat-overlay {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar for chat */
+.chat-messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+/* Tag styles */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.tag-party {
+  background: linear-gradient(135deg, var(--camp-purple), var(--camp-red));
+  color: white;
+}
+
+.tag-hiking {
+  background: linear-gradient(135deg, var(--camp-green), var(--camp-blue));
+  color: white;
+}
+
+.tag-food {
+  background: linear-gradient(135deg, var(--camp-orange), var(--camp-red));
+  color: white;
+}
+
+.tag-gaming {
+  background: linear-gradient(135deg, var(--camp-blue), var(--camp-purple));
+  color: white;
+}
+
+.tag-networking {
+  background: linear-gradient(135deg, var(--camp-orange), var(--camp-green));
+  color: white;
+}
+
+/* Profile avatar border */
+.avatar-border {
+  border: 3px solid;
+  border-image: linear-gradient(135deg, var(--camp-orange), var(--camp-purple)) 1;
+}
+
+/* Loading animation */
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
